@@ -12,5 +12,8 @@ fn main() {
     println!("the value of y is {y}");
     y = 10;
     println!("the new value of y is {y}");
+
+    //constant
+    const THREE_HOURS_IN_SEC: u32 = 60*60*3;
 }
 
