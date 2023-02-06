@@ -1,4 +1,4 @@
-use std::io; // std -> standard library containg io library
+// use std::io; // std -> standard library containg io library
 
 fn main() {
 
@@ -69,6 +69,13 @@ fn main() {
 
 //     // -Functions- //
 
+    println!("Hello, world!");
+    another_function();
     
+}
+
+fn another_function()
+{
+    println!("Another Function");
 }
 
