@@ -69,13 +69,37 @@ fn main() {
 
 //     // -Functions- //
 
-    println!("Hello, world!");
-    another_function();
+//    println!("Hello, world!");
+//    another_function();
+//    //paramatric functions
+//    another_function2(5);
+//    //statement & expressions
+//    let x: i32 = 6; // this whole is statement but 6 is expression
+//    let y = {
+//        let x: i32 = 3;
+//        x+1
+//    };
+//    println!("value of x is {x}");
+//    println!("value of y is {y}");
+//    //return type
+    let x = five();
+    println!("the value of x is {x}");
+
+    fn five() -> i32 {
+        5
+    }
+    
     
 }
 
 fn another_function()
 {
     println!("Another Function");
+}
+
+//paramatric function
+fn another_function2(x: i32)
+{
+    println!("the value of param is {x}");
 }
 
