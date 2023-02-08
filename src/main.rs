@@ -1,5 +1,6 @@
 // use std::io; // std -> standard library containg io library
 
+
 fn main() {
 
     // variables and mutability //
@@ -82,24 +83,68 @@ fn main() {
 //    println!("value of x is {x}");
 //    println!("value of y is {y}");
 //    //return type
-    let x = five();
-    println!("the value of x is {x}");
+//    let x = five();
+//    println!("the value of x is {x}");
+//
+//    fn five() -> i32 {
+//        5
+//    }
 
-    fn five() -> i32 {
-        5
+    //-control-flow-//
+//    let number: i32 = 3;
+//    if number<4 {
+//        println!("condition is true");
+//    }
+//    else{
+//        println!("condition is false");
+//    }
+        
+    //-Loops-//
+    let mut counter: i32 = 0;
+    let result: i32 = loop{
+        counter+=1;
+        if counter ==10 {
+            break counter*2;
+        }
+    };
+    println!("value of result is {result}");
+    let mut count: i32 = 0;
+    'counting_up: loop{
+        println!("count = {count}");
+        let mut remaining: i32 = 10;
+        loop {
+            println!("remaining = {remaining}");
+            if remaining == 9 {
+                break;
+            }
+            if count == 2{
+                break 'counting_up;
+            }
+            remaining-=1;
+        }
+        count+=1;
+    }
+    let mut number: i32 = 3;
+    while number != 0 {
+        println!("number = {number}");
+        number-=1;
+    }
+    println!("liftoff!");
+    let a: [i32; 5] = [10,20,30,40,50];
+    for element in a {
+        println!("the value is: {element}");
     }
     
-    
 }
 
-fn another_function()
-{
-    println!("Another Function");
-}
+// fn another_function()
+// {
+//     println!("Another Function");
+// }
 
-//paramatric function
-fn another_function2(x: i32)
-{
-    println!("the value of param is {x}");
-}
+// //paramatric function
+// fn another_function2(x: i32)
+// {
+//     println!("the value of param is {x}");
+// }
 
