@@ -34,4 +34,13 @@ fn main() {
     let len: usize = calculate_len(&str1);
     println!("The length of '{}' is {}", str1, len);
 
+    //immutability of reference
+    fn change(s: &String) 
+    {
+        s.push_str(", World");
+    }
+    let str2: String = String::from("Hello");
+    change(&str2);
+    println!("{}",str2);  // the above code will not compile
+
 }
