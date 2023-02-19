@@ -35,12 +35,18 @@ fn main() {
     println!("The length of '{}' is {}", str1, len);
 
     //immutability of reference
-    fn change(s: &String) 
-    {
-        s.push_str(", World");
-    }
+    // fn change(s: &String) 
+    // {
+    //     s.push_str(", World");
+    // }
     let str2: String = String::from("Hello");
-    change(&str2);
+    // change(&str2);
     println!("{}",str2);  // the above code will not compile
+
+    //mutable References
+    let mut str3: String = String::from("HELLO");
+    let r1 = &mut str3;
+    // let r2: &mut String = &mut str3;  // this will give error as there can only be one mutable references.
+    println!("{}", r1);
 
 }
