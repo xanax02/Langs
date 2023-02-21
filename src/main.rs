@@ -26,27 +26,50 @@ fn main() {
     // println!("s1 = {}, s2 = {}", s1,s2);
 
     //-reference-//
-    fn calculate_len(s: &String) -> usize 
-    {
-        return s.len();
-    }
-    let str1: String = String::from("Abhay");
-    let len: usize = calculate_len(&str1);
-    println!("The length of '{}' is {}", str1, len);
-
-    //immutability of reference
-    // fn change(s: &String) 
+    // fn calculate_len(s: &String) -> usize 
     // {
-    //     s.push_str(", World");
+    //     return s.len();
     // }
-    let str2: String = String::from("Hello");
-    // change(&str2);
-    println!("{}",str2);  // the above code will not compile
+    // let str1: String = String::from("Abhay");
+    // let len: usize = calculate_len(&str1);
+    // println!("The length of '{}' is {}", str1, len);
 
-    //mutable References
-    let mut str3: String = String::from("HELLO");
-    let r1 = &mut str3;
-    // let r2: &mut String = &mut str3;  // this will give error as there can only be one mutable references.
-    println!("{}", r1);
+    // //immutability of reference
+    // // fn change(s: &String) 
+    // // {
+    // //     s.push_str(", World");
+    // // }
+    // let str2: String = String::from("Hello");
+    // // change(&str2);
+    // println!("{}",str2);  // the above code will not compile
+
+    // //mutable References
+    // let mut str3: String = String::from("HELLO");
+    // let r1 = &mut str3;
+    // // let r2: &mut String = &mut str3;  // this will give error as there can only be one mutable references.
+    // println!("{}", r1);
+
+    //String slices
+    // let s: String =  String::from("hello world");
+    // let hello = &s[0..5];
+    // let world: &str = &s[6..11];
+
+    //return first word(with help of string slices)
+    let sentence: String = String::from("Hello WOrld");
+    let word: &str = first_word(&sentence);
+    println!("{}", word);
+
+    fn first_word(s: &String) -> &str
+    {
+        let bytes = s.as_bytes();
+        for(i, &item) in bytes.iter().enumerate()
+        {
+            if item == b' '
+            {
+                return &s[0..i];
+            }
+        }
+        return &s[..];
+    }
 
 }
