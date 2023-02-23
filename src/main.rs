@@ -25,6 +25,24 @@ fn main()
     let rect1: (u32, u32) = (30,50);
     println!("the area of rectangle with tuple refactoring is {} square pixels", area1(rect1));
 
+    // refactoring with struct
+
+    struct Rectangle {
+        height: u32,
+        width: u32
+    }
+
+    fn area2(rectangle: &Rectangle) -> u32
+    {
+        rectangle.width * rectangle.height
+    }
+
+    let rect1: Rectangle = Rectangle {
+        width: 50,
+        height: 30
+    };
+    println!("the area of rectangle with struct refactoring is {} square pixels", area2(&rect1));
+
     
 
 }
