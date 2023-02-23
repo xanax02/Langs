@@ -26,7 +26,7 @@ fn main()
     println!("the area of rectangle with tuple refactoring is {} square pixels", area1(rect1));
 
     // refactoring with struct
-
+    #[derive(Debug)]
     struct Rectangle {
         height: u32,
         width: u32
@@ -37,11 +37,15 @@ fn main()
         rectangle.width * rectangle.height
     }
 
+    let scale: u32 = 2; 
     let rect1: Rectangle = Rectangle {
         width: 50,
-        height: 30
+        height: dbg!(scale*30)
     };
     println!("the area of rectangle with struct refactoring is {} square pixels", area2(&rect1));
+
+    println!("rect1 is {:#?}", rect1);
+    dbg!(&rect1);
 
     
 
