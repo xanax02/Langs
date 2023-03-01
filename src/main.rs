@@ -85,5 +85,19 @@ fn main ()
         }
     }
 
+    //Catch-all pattern and _ placeholder
+    let dice_roll = 9;
+    match dice_roll {
+        3 => add_fancy_hat(),
+        7 => remove_fancy_hat(),
+        other => move_player(other), // when we are binding the value to move_player function
+        _ => reroll(), // when catch_all values are not required
+        _ => () // when nothing is required to be done for catch all values
+    }
+
+    fn add_fancy_hat() {}
+    fn remove_fancy_hat() {}
+    fn move_player(num: i32) {}
+    fn reroll() {}
 
 }
