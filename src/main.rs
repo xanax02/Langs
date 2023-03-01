@@ -1,5 +1,6 @@
 fn main ()
 {
+    /* ENUM */
     enum IpAddKind {
         V4,
         V6,
@@ -36,6 +37,53 @@ fn main ()
 
     let m = Message::Write(String::from("hello"));
     m.call();
+
+    /* MATCH CONTROL FLOW */
+    enum Coin {
+        Penny,
+        Nickle,
+        Dime,
+        Quater
+    }
+
+    fn value_in_cents(coin: Coin) -> u8
+    {
+        match coin 
+        {
+            Coin::Penny => 1,
+            Coin::Nickle=>5,
+            Coin::Dime=>10,
+            Coin::Quater=>25,
+        }
+    }
+
+    // Pattern that bind to values
+    #[derive(Debug)]
+    enum UsState {
+        Alabama,
+        Alaska,
+        // --smip
+    }
+
+    enum Coin2 {
+        Penny,
+        Nickle,
+        Dime,
+        Quater(UsState)
+    }
+
+    fn value_in_cents2(coin: Coin2) -> u8
+    {
+        match coin {
+            Coin2::Penny => 1,
+            Coin2::Nickle => 5,
+            Coin2::Dime => 10,
+            Coin2::Quater(state) => {
+                println!("State quater from {:?}!", state);
+                25
+            }
+        }
+    }
 
 
 }
