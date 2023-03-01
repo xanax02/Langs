@@ -106,5 +106,12 @@ fn main ()
         Some(max) => println!("The maximum is configured to be {}", max),
         _ => (),
     }
+    // same can be written with if let and we dont need to use catch all
+    if let Some(max) = configure_max {
+        println!("The maximum is configured to be {}", max);
+    }
+    else { // else is for catch all here is if let
+        ()
+    }
 
 }
