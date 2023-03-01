@@ -100,4 +100,11 @@ fn main ()
     fn move_player(num: i32) {}
     fn reroll() {}
 
+    /* CONCISE CONTROL FLOW WITH IF LET */
+    let configure_max = Some(3u8);
+    match configure_max {
+        Some(max) => println!("The maximum is configured to be {}", max),
+        _ => (),
+    }
+
 }
