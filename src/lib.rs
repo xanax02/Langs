@@ -1,9 +1,9 @@
 mod front_of_house 
 {
-    mod hoisting
+    pub mod hoisting
     {
-        fn add_to_waitlist() {}
-        fn seat_at_table() {}
+        pub fn add_to_waitlist() {}
+        pub fn seat_at_table() {}
     }
 
     mod serving
@@ -12,4 +12,13 @@ mod front_of_house
         fn serve_order() {}
         fn take_payment() {}
     }
+}
+
+pub fn eat_in_restaurant() 
+{
+    //Absolute path
+    crate::front_of_house::hoisting::add_to_waitlist();
+
+    //Relative path
+    front_of_house::hoisting::add_to_waitlist();
 }
