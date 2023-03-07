@@ -14,6 +14,18 @@ mod front_of_house
     }
 }
 
+fn deliver_order() {}
+
+mod back_of_house
+{
+    fn fix_incorrect() {
+        cook_order();
+        super::deliver_order();
+    }
+
+    fn cook_order() {}
+}
+
 pub fn eat_in_restaurant() 
 {
     //Absolute path
