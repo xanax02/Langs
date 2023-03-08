@@ -24,6 +24,17 @@ mod back_of_house
     }
 
     fn cook_order() {}
+
+    pub struct Breakfast {
+        pub toast: String,
+        seasonal_fruit: String,
+    }
+
+    impl Breakfast {
+        pub fn summer(toast: &str) -> Breakfast {
+            Breakfast { toast: String::from(toast), seasonal_fruit: String::from("Peaches") }
+        }
+    }
 }
 
 pub fn eat_in_restaurant() 
@@ -33,4 +44,8 @@ pub fn eat_in_restaurant()
 
     //Relative path
     front_of_house::hoisting::add_to_waitlist();
+
+    let mut meal = back_of_house::Breakfast::summer("Rye");
+    meal.toast = String::from("Wheat");
+    println!("I'd like {} toast please", meal.toast);
 }
