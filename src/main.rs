@@ -19,4 +19,21 @@ fn main()
     Some(last) => println!("the value of last element is {last}"),
     None => println!("No such value exist for index please check the index")
    }
+
+   //traversing
+   let mut v3 = vec![1,2,3,4,5,100, 32, 57];
+   for i in &mut v3
+   {
+    println!("{i}");
+   }
+
+   //changing value of vector by iterating
+   for i in &mut v3
+   {
+    *i += 10;
+   }
+   for i in &mut v3
+   {
+    println!("{i}");
+   }
 }
