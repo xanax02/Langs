@@ -2,6 +2,9 @@
 type name = string;
 let system: name = "alice";
 
+// union type alias
+type ID = number | string;
+
 // object type alias
 type user = {
     name: string;
