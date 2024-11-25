@@ -10,4 +10,12 @@ func main() {
 	fmt.Println(<-ch);
 	fmt.Println(<-ch);
 
+	message := make(chan string)
+
+	message <- "hello";
+	message <- "world";
+
+	fmt.Println(<-message)
+	fmt.Println(<-message)
+
 }
