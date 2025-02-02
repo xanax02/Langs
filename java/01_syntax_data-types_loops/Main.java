@@ -11,5 +11,14 @@ public class Main {
 
 		char ascVal = 65;
 		System.out.println(ascVal);
+
+		// widening casting
+		int anyNumber = 69;
+		double anyDoubleNumber = anyNumber;
+		System.out.println("int to double " + anyDoubleNumber);
+
+		double anyDbouleNumber = 2.1d;
+		int convertedIntFromDouble = (int) anyDbouleNumber;
+		System.out.println("double to int" +  convertedIntFromDouble);
 	}
 }
