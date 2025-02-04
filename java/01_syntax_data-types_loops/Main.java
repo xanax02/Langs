@@ -44,5 +44,23 @@ public class Main {
 			default:
 				System.out.println("Weekend");
 			}
+
+		//for each loop
+		String[] cars = {"Volvo", "BMW", "Audi", "Mercedes" };
+		for(String i: cars) {
+			System.out.println(i);
+		}
+
+		System.out.println();
+
+		//Arrays
+		String[] cars2 = {"Volvo", "BMW", "Audi", "Mercedes" };
+		System.out.println("Length" + cars2.length);
+
+		//Multidimensional
+		int[][] multiDArray = {{1,2,3}, {4,5,6}};
+		System.out.println("multiD" + multiDArray[1][2]);
+
+
 	}
 }
