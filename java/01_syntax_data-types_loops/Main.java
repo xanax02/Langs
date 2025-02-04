@@ -20,5 +20,10 @@ public class Main {
 		double anyDbouleNumber = 2.1d;
 		int convertedIntFromDouble = (int) anyDbouleNumber;
 		System.out.println("double to int" +  convertedIntFromDouble);
+
+		//Strings
+		String txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		System.out.println("the length is " + txt.length());
+		System.out.println("to lower case" + txt.toLowerCase());
 	}
 }
