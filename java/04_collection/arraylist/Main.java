@@ -34,5 +34,8 @@ public class Main {
 		System.out.println("Sorting Numbers");
 		Collections.sort(myNumbers);
 		System.out.println(myNumbers);
+		System.out.println("Reverse order");
+		Collections.sort(myNumbers, Collections.reverseOrder());
+		System.out.println(myNumbers);
 	}
 }
