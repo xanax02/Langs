@@ -20,3 +20,6 @@ class ElectricCar(Car):
 
 tesla = ElectricCar("Tesla", "Model S", "99kWh")
 print(tesla.get_brand())
+
+print(isinstance(tesla, Car))
+print(isinstance(tesla, ElectricCar))
