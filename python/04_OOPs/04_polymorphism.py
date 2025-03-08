@@ -1,7 +1,11 @@
 class Car:
+    total_car = 0
+
+
     def __init__(self, brand, model):
         self.__brand = brand
         self.model = model
+        Car.total_car+=1
 
 
     def get_brand(self):
@@ -31,3 +35,6 @@ print(f"fuel type of {tesla.get_brand()} {tesla.model} is {tesla.fuel_type()}")
 
 m3 = Car("BMW", "M3")
 print(f"Fuel type of {m3.get_brand()} {m3.model} is {m3.fuel_type()}")
+
+#class variable
+print(Car.total_car)
