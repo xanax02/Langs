@@ -45,8 +45,11 @@ class DebitCard(Card):
 
 class UPI(PaymentMethod):
 
+    def __init__(self, upiId):
+        self.upiId = upiId
+
     def pay(self):
-        print("Making payment through UPI")
+        print(f"Making payment through UPI {self.upiId}")
 
 
 #payment service
@@ -61,3 +64,18 @@ class paymentService:
     def make_payments(self, name):
         pm = self.payment_methods[name]
         pm.pay()
+
+
+#client
+class Client:
+    ps = paymentService()
+
+    ps.add_payment_method(name="AbhayHDFCDebitCar", payment_method=DebitCard(card_name='ABHAY', card_number='92834750982'))
+
+    ps.add_payment_method(name="AbhayCreditCard", payment_method=CreditCard(card_name='abhay', card_number='3344334'))
+
+    ps.add_payment_method(name='AbhayUPI', payment_method=UPI(upiId='klsjdflk'))
+
+    ps.make_payments(name="AbhayHDFCDebitCar")
+    ps.make_payments(name="AbhayCreditCard")
+    ps.make_payments(name="AbhayUPI")
