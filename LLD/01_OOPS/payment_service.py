@@ -47,3 +47,17 @@ class UPI(PaymentMethod):
 
     def pay(self):
         print("Making payment through UPI")
+
+
+#payment service
+class paymentService:
+
+    def __init__(self):
+        self.payment_methods: dict[str, PaymentMethod] = {}
+
+    def add_payment_method(self, name, payment_method): #storing payments
+        self.payment_methods[name] = payment_method
+
+    def make_payments(self, name):
+        pm = self.payment_methods[name]
+        pm.pay()
