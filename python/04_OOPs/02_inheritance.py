@@ -8,12 +8,12 @@ class Car:
     #method
     def full_name(self):
         return f"{self.brand} {self.model}"
-        
+
 
 #inherited in ()
 class ElectricCar(Car):
     def __init__(self, brand, model, battery_size):
-        super().__init__(brand, model) #passed the parameters in parent class constructor 
+        super().__init__(brand, model) #passed the parameters in parent class constructor
         self.battery_size = battery_size
 
 ## multiple inheritance
@@ -35,4 +35,4 @@ tesla = ElectricCar("Tesla", "Model S", "99kWh")
 print(tesla.full_name())
 
 multi_int_tesla = ElectricCarMultipleInt("Tesla", "ModelS")
-print(f"multiple inhertance for {multi_int_tesla.full_name()} and props from {multi_int_tesla.battery_info()}, {multi_int_tesla.engine_info()}")
+print(f"multiple inhertance for {multi_int_tesla.full_name()} and props from {multi_int_tesla.battery_info()}, {multi_int_tesla.engine_info()} and {multi_int_tesla.battery_info}")
