@@ -74,3 +74,9 @@ class Manager2 implements People1 {
 
   greet = () => "string";
 }
+
+////////////
+
+// only interfaces are implemented
+// classes and interface can be extended but to the class and interface respectively .]
+// not from class to interface or vice verse
