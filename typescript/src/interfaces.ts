@@ -27,3 +27,50 @@ let user2: User1 = {
   name: "ahbay",
   age: 22,
 };
+
+///////////////////////
+// ../
+//
+
+// implementing interfaces
+// interfaces can be used to create objects as well as classes
+
+interface People1 {
+  name: string;
+  age: number;
+  greet: () => string;
+  //or
+  // greet(): string
+}
+
+let user3: People1 = {
+  name: "abay",
+  age: 22,
+  greet: () => "hello",
+};
+
+//class implementing People1
+class Manager1 implements People1 {
+  name: string;
+  age: number;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+    //can add extra things aprt from interface datatypes
+  }
+
+  greet() {
+    return "hello" + this.name;
+  }
+}
+
+let manager1 = new Manager1("John", 30);
+console.log(manager1.age);
+
+//shorthand for implentation
+class Manager2 implements People1 {
+  constructor(public name: string, public age: number) {}
+
+  greet = () => "string";
+}
