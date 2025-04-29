@@ -1,12 +1,15 @@
+//2. interface for other interface
+interface Address {
+  city: string;
+  pin: number;
+  country: string;
+}
+
 // 1. basic example of creating user object
 interface User1 {
   name: string;
   age: number;
-  address?: {
-    city: string;
-    pin: number;
-    country: string;
-  };
+  address?: Address;
 }
 
 let user: User1 = {
@@ -24,5 +27,3 @@ let user2: User1 = {
   name: "ahbay",
   age: 22,
 };
-
-//
