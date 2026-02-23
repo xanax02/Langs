@@ -1,0 +1,12 @@
+{
+  "name": "01_singleton_patthern",
+  "version": "1.0.0",
+  "main": "counter.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
